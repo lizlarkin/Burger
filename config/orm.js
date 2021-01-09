@@ -1,15 +1,37 @@
-const connection = require('Connection');
+// MySQL connection is connected here
+const connection = require('./connection.js');
 
-function selectAll () {
 
-}
+const orm = {
 
-function insertOne () {
-    
-}
+    // Select All Method
+    selectAll (whatToSelect) {        
+        const queryString = "SELECT * FROM ??";
+        connection.query(queryString, (err, data) => {
+            if (err) throw err;
+            console.log(data);
+            });
+    },
 
-function updateOne () {
-    
-}
+    // Insert One Method
+    insertOne (tableName, valueToInsert) {
+        const queryString = "INSERT INTO ?? VALUE ?";
+        connection.query(queryString, (err, data) => {
+            if (err) throw err;
+            console.log(data);
+            });
+    },
 
-module.exports = ORM;
+    // Update One Method
+    updateOne (tableName, columnName, booleanValue, id) {
+        const queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
+        connection.query(queryString, (err, data) => {
+            if (err) throw err;
+            console.log(data);
+            });
+    }
+
+};
+
+// Export Object
+module.exports = orm;

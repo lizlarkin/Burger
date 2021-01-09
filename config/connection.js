@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 
-const PORT = process.env.PORT || 8080;
+// const PORT = process.env.PORT || 8080;
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -19,4 +19,4 @@ const connection = mysql.createConnection({
     console.log(`connected as id ${connection.threadId}`);
   });
 
-module.exports = Connection;
+module.exports = connection;
