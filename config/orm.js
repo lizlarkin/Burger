@@ -9,13 +9,12 @@ const orm = {
         const queryString = "SELECT * FROM ??";
         connection.query(queryString, (err, data) => {
             if (err) throw err;
-            console.log(data);
             });
     },
 
     // Insert One Method
     insertOne (tableName, valueToInsert) {
-        const queryString = "INSERT INTO ?? VALUE ?";
+        const queryString = `INSERT INTO ?? VALUE ${valueToInsert}`;
         connection.query(queryString, (err, data) => {
             if (err) throw err;
             console.log(data);
