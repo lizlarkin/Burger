@@ -11,7 +11,9 @@
     <div class="col-sm-6">
         <h2>All the Burgers. Eat one!</h2>
         <ul>
-            {{burgers}}
+            {{#each burgers}}
+                {{burger_name}}
+            {{/each}}
         </ul>
     </div>
 
