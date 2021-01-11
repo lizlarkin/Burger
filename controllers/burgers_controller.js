@@ -8,19 +8,15 @@ router.get('/', (req, res) => {
         const burgersObject = {
             burgers: data,
         };
-        console.log(burgersObject);
+        // console.log(burgersObject);
         res.render('index', burgersObject);
     });
 });
 
-// router.post('/api/burgers', (req, res) => {
-//     burger.create(['name', 'devoured'], 
-//     [req.body.name,
-//     req.body.devoured],
-//     (err, data) => {
-//         if(err) throw err;
-//         console.log(data);
-//     });
-// });
+router.post('/api/burgers', (req, res) => {
+    burger.insertOne([req.body.burger_name],(data) => {
+        res.json({ id: data.insertId });
+    });
+});
 
 module.exports = router;

@@ -12,12 +12,36 @@
         <h2>All the Burgers. Eat one!</h2>
         <ul>
             {{#each burgers}}
-                {{burger_name}}
+                {{#unless devoured}}
+                    {{burger_name}} <button class = 'devoured-button'>Devour</button>
+                {{/unless}}
             {{/each}}
         </ul>
     </div>
 
     <div class="col-sm-6">
       <h2>Devoured Burgers</h2>
+      <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                    {{burger_name}} 
+                {{/if}}
+            {{/each}}
+      </ul>
+    </div>
+</div>
+
+{{!-- Add Burger Form --}}
+<div class="row">
+    <div class="col-sm-4">
+        <h2>Add a Burger</h2> 
+
+        <form>
+            <div class="mb-3">
+                <textarea class="form-control" id="add-burger-input" rows="3"></textarea>
+                <button type="submit" id="add-burger-button" class="btn btn-primary">Add Burger</button>
+            </div>
+        </form>
+
     </div>
 </div>

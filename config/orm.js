@@ -12,24 +12,24 @@ const orm = {
             });
     },
 
-    // // Insert One Method
-    // insertOne (tableName, valueToInsert) {
-    //     const queryString = `INSERT INTO ?? VALUE ${valueToInsert}`;
-    //     connection.query(queryString, (err, data) => {
-    //         if (err) throw err;
-    //         console.log(data);
-    //         });
-    // },
+    // Insert One Method
+    insertOne (tableName, nameToInsert, cb) {
+        const queryString = `INSERT INTO ${tableName} (burger_name) VALUES (?)`;
+        connection.query(queryString, nameToInsert, (err, data) => {
+            if (err) {throw err};
+            cb(data);
+            });
+    },
 
-    // // Update One Method
-    // updateOne (tableName, columnName, booleanValue, id) {
-    //     const queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
-    //     connection.query(queryString, (err, data) => {
-    //         if (err) throw err;
-    //         console.log(data);
-    //         });
-    // }
-
+    // Update One Method
+    updateOne (tableName, boolean, cb) {
+        const queryString = `UPDATE ${tableName} SET devoured = true WHERE id = ?`;
+        connection.query(queryString, boolean, (err, data) => {
+            if (err) {throw err};
+            cb(data);
+            });
+    },
+  
 };
 
 // Export Object

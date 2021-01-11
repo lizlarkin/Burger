@@ -9,10 +9,10 @@ const burger = {
         (data) => callback(data));
     },
 
-    // // Insert One from orm
-    // insertOne(valueToInsert) {
-    //     orm.insertOne('burgers', valueToInsert);
-    // },
+    // Insert One from orm
+    insertOne(nameToInsert, cb) {
+        orm.insertOne('burgers', nameToInsert, (data) => cb(data));
+    },
 
     // // Update One from orm
     // updateOne(booleanValue, id) {
