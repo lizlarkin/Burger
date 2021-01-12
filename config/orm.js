@@ -14,7 +14,7 @@ const orm = {
 
     // Insert One Method
     insertOne (tableName, nameToInsert, cb) {
-        const queryString = `INSERT INTO ${tableName} (burger_name) VALUES (?)`;
+        const queryString = `INSERT INTO ${tableName} (burger_name, devoured) VALUE (?, FALSE)`;
         connection.query(queryString, nameToInsert, (err, data) => {
             if (err) {throw err};
             cb(data);
