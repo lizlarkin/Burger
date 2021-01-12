@@ -7,13 +7,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // Get access to Add Burger Button and Text Input elements
 const addBurgerBtn = document.querySelector('#add-burger-button');
-const addBurgerEl = document.querySelector('add-burger-input');
 
-// Submit Event Handler
+// Add Button Event Handler
 addBurgerBtn.addEventListener('click', (event) => {
     event.preventDefault();
+    
 
     if(addBurgerBtn) {
+
+    const addBurgerEl = document.querySelector('#add-burger-input');
 
     const addBurger = {
         burger_name: addBurgerEl.value.trim()
@@ -33,16 +35,40 @@ addBurgerBtn.addEventListener('click', (event) => {
     };
 });
 
+// Get Access to Devoured Button
+const devouredBtns = document.querySelector('.btn.btn-danger.devoured-button');
 
-// Get Access to Devour Buttons
-const devourBtns = document.querySelectorAll('.devoured-button');
+// Update Event Handler
 
-// if(devourBurger) {
-//     devourBurger.forEach(element) => {
-//         element.addEventListener (event) => {
-//             event.preventDefault();
-//         }
-//     }
-// }
+devouredBtns.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const id = e.target.getAttribute('')
+    });
+    
+    const id = e.target.getAttribute('data-id');
+    const newStatus = e.target.getAttribute('data-devoured');
 
+    const burgerStatus = {
+      devoured: newStatus,
+    };
+
+    fetch(`/api/burgers/${id}`, {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify(burgerStatus),
+    }).then((response) => {
+
+      if (response.ok) {
+        console.log(`Changed devoured to: ${newStatus}`);
+        location.reload('/');
+      } else {
+        alert('Try again!');
+      }
+    });
+  });
 });

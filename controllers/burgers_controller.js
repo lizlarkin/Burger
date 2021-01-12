@@ -19,4 +19,23 @@ router.post('/api/burgers', (req, res) => {
     });
 });
 
+router.put('/api/burgers/:id', (req, res) => {
+    const boolean = `id = ${req.params.id}`;
+  
+    console.log('boolean', boolean);
+  
+    burger.update(
+      {
+        devoured: req.body.devoured,
+      },
+      boolean,
+      (data) => {
+        if (data.changedRows === 0) {
+          return res.status(404).end();
+        }
+        res.status(200).end();
+      }
+    );
+  });
+
 module.exports = router;
