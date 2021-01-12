@@ -1,3 +1,9 @@
+/* .col-md-12.top-bun {
+    border: 1px solid red;
+    background-image: url("../img/burger_top.png");
+} */
+
+
 h1 {
     color: green;
     text-align: center;
@@ -10,5 +16,6 @@ h1 {
 
 ul li {
     display: block;
+    margin-top: 20px;
 }
 

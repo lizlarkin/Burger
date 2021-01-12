@@ -36,18 +36,14 @@ addBurgerBtn.addEventListener('click', (event) => {
 });
 
 // Get Access to Devoured Button
-const devouredBtns = document.querySelector('.btn.btn-danger.devoured-button');
+const devouredBtns = document.querySelectorAll('.btn.btn-danger.devoured-button');
 
 // Update Event Handler
-
+if (devouredBtns) {
 devouredBtns.forEach((btn) => {
     btn.addEventListener('click', (event) => {
-        event.preventDefault();
-        const id = e.target.getAttribute('')
-    });
-    
-    const id = e.target.getAttribute('data-id');
-    const newStatus = e.target.getAttribute('data-devoured');
+        const id = event.target.getAttribute('data-id');
+        const newStatus = event.target.getAttribute('data-devoured');
 
     const burgerStatus = {
       devoured: newStatus,
@@ -68,7 +64,9 @@ devouredBtns.forEach((btn) => {
         location.reload('/');
       } else {
         alert('Try again!');
-      }
+        }
+      });
     });
   });
-});
+}
+})

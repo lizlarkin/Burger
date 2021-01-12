@@ -24,7 +24,7 @@ router.put('/api/burgers/:id', (req, res) => {
   
     console.log('boolean', boolean);
   
-    burger.update(
+    burger.updateOne(
       {
         devoured: req.body.devoured,
       },
