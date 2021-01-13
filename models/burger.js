@@ -4,19 +4,24 @@ const orm = require('../config/orm.js');
 const burger = {
 
     // Select All from orm
-    selectAll(callback) {
+    selectAll: function(cb) {
         orm.selectAll('burgers',
-        (data) => callback(data));
+        cb);
     },
 
     // Insert One from orm
-    insertOne(nameToInsert, cb) {
-        orm.insertOne('burgers', nameToInsert, (data) => cb(data));
+    insertOne: function(nameToInsert, cb) {
+        orm.insertOne('burgers', 
+        nameToInsert, 
+        cb);
     },
 
     // Update One from orm
-    updateOne(boolean, condition, cb) {
-        orm.updateOne('burgers', boolean, condition, (data) => cb(data));
+    updateOne: function(boolean, condition, cb) {
+        orm.updateOne('burgers', 
+        boolean, 
+        condition, 
+        cb);
     }
 };
 
