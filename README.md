@@ -26,4 +26,4 @@ MIT License: A short and simple permissive license with conditions only requirin
 :https://lizlarkin.github.io/Weather_App/weather.html
 
 ## Screenshot: 
-<img src="Weather_Screenshot.png">
+<img src="burger-screenshot.png">
