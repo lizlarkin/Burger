@@ -48,7 +48,7 @@ const orm = {
     // Update One Method
     updateOne (tableName, boolean, condition, cb) {
         // const queryString = `UPDATE ${tableName} SET devoured = ${boolean} WHERE ${condition}`;
-        const queryString = "UPDATE " + tableName;
+        let queryString = "UPDATE " + tableName;
         queryString += " SET "
         queryString += objToSql(boolean) 
         queryString += " WHERE "

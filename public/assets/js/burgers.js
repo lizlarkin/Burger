@@ -43,10 +43,10 @@ if (devouredBtns) {
 devouredBtns.forEach((btn) => {
     btn.addEventListener('click', (event) => {
         const id = event.target.getAttribute('data-id');
-        const newStatus = event.target.getAttribute('data-devoured');
+        // const newStatus = event.target.getAttribute('data-devoured');
 
     const burgerStatus = {
-      devoured: newStatus,
+      devoured: true,
     };
 
     fetch(`/api/burgers/${id}`, {

@@ -1,8 +1,8 @@
 
 // Import orm
-const orm = require('../config/orm.js');
+let orm = require('../config/orm.js');
 
-const burger = {
+let burger = {
 
     // Select All from orm
     selectAll(callback) {

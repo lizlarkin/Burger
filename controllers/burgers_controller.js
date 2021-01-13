@@ -5,7 +5,7 @@ const burger = require('../models/burger');
 
 router.get('/', (req, res) => {
     burger.selectAll((data) => {
-        const burgersObject = {
+        let burgersObject = {
             burgers: data,
         };
         // console.log(burgersObject);
@@ -20,7 +20,7 @@ router.post('/api/burgers', (req, res) => {
 });
 
 router.put('/api/burgers/:id', (req, res) => {
-  const condition = `id = ${req.params.id}`;
+  let condition = `id = ${req.params.id}`;
   
     console.log('condition', condition);
   
