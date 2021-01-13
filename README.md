@@ -12,7 +12,7 @@ Burger position should change to right side of screen on click.
 This project is open to contributions.
 
 ## To Do:
-* Fix devour. 
+* Try to add top and bottom bun pictures around title. 
 
 ## License:
 MIT License: A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code. License descriptions provided by [Choose A License]https://choosealicense.com/)
@@ -23,7 +23,7 @@ MIT License: A short and simple permissive license with conditions only requirin
 * Email me with addition questions at: enlarkin@gmail.com
 
 ## Link to the deployed page
-:https://lizlarkin.github.io/Weather_App/weather.html
+:https://larkin-burger.herokuapp.com/
 
 ## Screenshot: 
 <img src="burger-screenshot.png">
