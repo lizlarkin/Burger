@@ -1,27 +1,23 @@
+
 // Import orm
 const orm = require('../config/orm.js');
 
 const burger = {
 
     // Select All from orm
-    selectAll: function(cb) {
+    selectAll(callback) {
         orm.selectAll('burgers',
-        cb);
+        (data) => callback(data));
     },
 
     // Insert One from orm
-    insertOne: function(nameToInsert, cb) {
-        orm.insertOne('burgers', 
-        nameToInsert, 
-        cb);
+    insertOne(nameToInsert, cb) {
+        orm.insertOne('burgers', nameToInsert, (data) => cb(data));
     },
 
     // Update One from orm
-    updateOne: function(boolean, condition, cb) {
-        orm.updateOne('burgers', 
-        boolean, 
-        condition, 
-        cb);
+    updateOne(boolean, condition, cb) {
+        orm.updateOne('burgers', boolean, condition, (data) => cb(data));
     }
 };
 

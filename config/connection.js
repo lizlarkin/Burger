@@ -10,9 +10,9 @@ const connection = mysql.createConnection({
     database: 'burgers_db',
   });
   
-  connection.connect((err) => {
+  connection.connect(function(err) {
     if (err) {
-      console.error(`error connecting: ${err.stack}`);
+      console.error("error connecting:" + err.stack);
       return;
     }
   
