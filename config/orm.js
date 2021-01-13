@@ -4,7 +4,7 @@ const connection = require('./connection.js');
 const orm = {
 
     // Select All Method
-    selectAll (whatToSelect, cb) {        
+    selectAll: function(whatToSelect, cb) {        
         const queryString = `SELECT * FROM ${whatToSelect}`;
         connection.query(queryString, (err, data) => {
             if (err) {throw err};
@@ -13,7 +13,7 @@ const orm = {
     },
 
     // Insert One Method
-    insertOne (tableName, nameToInsert, cb) {
+    insertOne: function(tableName, nameToInsert, cb) {
         const queryString = `INSERT INTO ${tableName} (burger_name, devoured) VALUE (?, FALSE)`;
         connection.query(queryString, nameToInsert, (err, data) => {
             if (err) {throw err};
@@ -22,7 +22,7 @@ const orm = {
     },
 
     // Update One Method
-    updateOne (tableName, boolean, condition, cb) {
+    updateOne: function(tableName, boolean, condition, cb) {
         const queryString = `UPDATE ${tableName} SET devoured = ${boolean} WHERE id = ?`;
         connection.query(queryString, boolean, condition, (err, data) => {
             if (err) {throw err};
