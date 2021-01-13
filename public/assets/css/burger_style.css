@@ -3,6 +3,23 @@
     background-image: url("../img/burger_top.png");
 } */
 
+body {
+    background: url("https://image.freepik.com/free-vector/burger-seamless-pattern-background-vector-design_22159-34.jpg");
+}
+
+#header {
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+#left {
+    border-right: 1px solid black;
+}
+
+.container {
+    margin-top: 50px;
+    background-color: white;
+}
 
 h1 {
     color: green;
