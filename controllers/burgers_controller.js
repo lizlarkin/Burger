@@ -20,15 +20,15 @@ router.post('/api/burgers', (req, res) => {
 });
 
 router.put('/api/burgers/:id', (req, res) => {
-    const boolean = `id = ${req.params.id}`;
+  const condition = `id = ${req.params.id}`;
   
-    console.log('boolean', boolean);
+    console.log('condition', condition);
   
     burger.updateOne(
       {
         devoured: req.body.devoured,
       },
-      boolean,
+      condition,
       (data) => {
         if (data.changedRows === 0) {
           return res.status(404).end();

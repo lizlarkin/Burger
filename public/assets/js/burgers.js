@@ -60,7 +60,7 @@ devouredBtns.forEach((btn) => {
     }).then((response) => {
 
       if (response.ok) {
-        console.log(`Changed devoured to: ${newStatus}`);
+        console.log(`Changed devoured`);
         location.reload('/');
       } else {
         alert('Try again!');
@@ -70,3 +70,28 @@ devouredBtns.forEach((btn) => {
   });
 }
 })
+
+
+
+// $(document).ready(function() {
+//     $(".devoured-button").on("click", function(event) {
+//       event.preventDefault();
+//       var burger_id = $(this).attr("data-id");
+//       console.log(burger_id);
+
+//       fetch(`/api/burgers/${burger_id}`,{
+//           method:'PUT',
+//           headers: {
+//                      Accept: 'application/json',
+//                      'Content-Type': 'application/json',
+//                    },
+//       }).then((response)=>{
+//         if (response.ok) {
+//                     console.log(`Changed devoured`);
+//                     location.reload('/');
+//                   } else {
+//                     alert('Try again!');
+//                     }
+//       })
+//     });
+//   });

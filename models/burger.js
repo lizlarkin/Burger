@@ -14,10 +14,10 @@ const burger = {
         orm.insertOne('burgers', nameToInsert, (data) => cb(data));
     },
 
-    // // Update One from orm
-    // updateOne(booleanValue, id) {
-    //     orm.updateOne('burgers', 'devoured', booleanValue, id);
-    // }
+    // Update One from orm
+    updateOne(boolean, condition, cb) {
+        orm.updateOne('burgers', boolean, condition, (data) => cb(data));
+    }
 };
 
 module.exports = burger;

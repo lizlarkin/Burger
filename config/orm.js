@@ -22,9 +22,9 @@ const orm = {
     },
 
     // Update One Method
-    updateOne (tableName, boolean, cb) {
-        const queryString = `UPDATE ${tableName} SET devoured = true WHERE id = ?`;
-        connection.query(queryString, boolean, (err, data) => {
+    updateOne (tableName, boolean, condition, cb) {
+        const queryString = `UPDATE ${tableName} SET devoured = ${boolean} WHERE id = ?`;
+        connection.query(queryString, boolean, condition, (err, data) => {
             if (err) {throw err};
             cb(data);
             });
