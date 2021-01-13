@@ -21,3 +21,9 @@ MIT License: A short and simple permissive license with conditions only requirin
 * GitHub Username: lizlarkin
 * lizlarkin GitHub Link
 * Email me with addition questions at: enlarkin@gmail.com
+
+## Link to the deployed page
+:https://lizlarkin.github.io/Weather_App/weather.html
+
+## Screenshot: 
+<img src="Weather_Screenshot.png">
